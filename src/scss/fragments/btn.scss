@@ -3,18 +3,21 @@
 .btn {
     cursor: pointer;
     overflow: hidden;
-    padding: 10px 24px;
-    border-radius: 8px;
-
-    @include transition(#{background, box-shadow, color, border-color});
-
     @include relative;
     @include flex(row, center, center, 8px);
 
     @include size(max-content);
     @include maxSize(100%);
 
+    padding: 12px 24px;
+    border-radius: 8px;
     background: transparent;
+
+    color: var(--primary-on-primary, #ffe9ee);
+    text-align: center;
+    @include font-label;
+
+    @include transition(#{background, box-shadow, color, border-color});
 
     svg {
         @include minSize(18px, 18px);
@@ -24,146 +27,152 @@
         }
     }
 
-    &:has(svg) {
-        padding: 10px 16px;
+    &[disabled],
+    &.disabled {
+        pointer-events: none;
     }
 
-    &::after {
-        content: "";
-        @include absolute($all: 0px);
-        z-index: 2;
-        pointer-events: none;
+    &--l {
+        padding: 16px 32px;
+    }
+    &--s {
+        padding: 8px 16px;
+    }
 
-        @include transition(#{background});
+    &--filled {
+        box-shadow: 0 4px 16px 0 rgba(17, 8, 22, 0.24);
+
+        @include hoverActiveFocus {
+            box-shadow: 0 6px 20px 0 rgba(17, 8, 22, 0.32);
+        }
     }
 
     &--primary {
-        background: var(--primary, #7ade50);
-        color: var(--on-primary, #0f3900);
+        color: var(--primary-on-primary, #ffe9ee);
+        background: var(--primary-primary, linear-gradient(180deg, #cf254c 0%, #da2851 100%));
 
         @include hover {
-            box-shadow:
-                0px 1px 3px 1px rgba(0, 0, 0, 0.15),
-                0px 1px 2px 0px rgba(0, 0, 0, 0.3);
-
-            &::after {
-                background: var(--on-primary-opacity-008, rgba(56, 30, 114, 0.08));
-            }
+            background: var(--primary-primary-hover, #e9335d);
         }
 
         @include activeFocus {
-            &::after {
-                background: var(--on-primary-opacity-012, rgba(56, 30, 114, 0.12));
-            }
+            background: var(--primary-primary-focus, #ee3b64);
         }
 
         &[disabled],
         &.disabled {
-            background: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
-            color: #e1e4d961;
-            &::after {
-                background-color: transparent;
-            }
+            background: var(--primary-primary-disabled, #aa2e4b);
+            color: var(--primary-on-primary-disabled, #cc798c);
         }
     }
 
-    &--outlined {
-        border: 1px solid var(--outline, #8d9287);
-        color: var(--primary, #7ade50);
-        padding-block: 9px;
-
-        &:has(svg) {
-            padding-block: 9px;
-        }
+    &--secondary {
+        color: var(--secondary-on-secondary, #ecffe5);
+        background: var(--secondary-secondary, linear-gradient(180deg, #297908 0%, #268f01 100%));
 
         @include hover {
-            &::after {
-                background: var(--primary-opacity-008, rgba(208, 188, 255, 0.08));
-            }
+            background: var(--secondary-secondary-hover, #309509);
         }
 
-        @include focus {
-            border-color: var(--primary, #7ade50);
-            &::after {
-                background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
-            }
-        }
-
-        @include active {
-            &::after {
-                background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
-            }
+        @include activeFocus {
+            background: var(--secondary-secondary-focus, #379f0f);
         }
 
         &[disabled],
         &.disabled {
-            border-color: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
-            color: #e1e4d961;
-            &::after {
-                background-color: transparent;
-            }
+            background: var(--secondary-secondary-disabled, #304f25);
+            color: var(--secondary-on-secondary-disabled, #4f7441);
+        }
+    }
+
+    &--tertiary {
+        background: #0c5d87;
+        color: var(--tertiary-on-tertiary, #dbf1fd);
+
+        @include hover {
+            background: var(--tertiary-tertiary-hover, #15709f);
+        }
+
+        @include activeFocus {
+            background: var(--tertiary-tertiary-focus, #1b79aa);
+        }
+
+        &[disabled],
+        &.disabled {
+            background: var(--tertiary-tertiary-disabled, #1b4d67);
         }
     }
 
     &--elevated {
-        color: var(--primary, #7ade50);
-        background: var(--surface-container-low, #191d17);
-        box-shadow:
-            0px 1px 3px 1px rgba(0, 0, 0, 0.15),
-            0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+        color: var(--on-surface-on-surface-light, #fff);
+        background: transparent;
+
+        &::after {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: var(--surface-container-surface-container-high, #343b87);
+        }
 
         @include hover {
-            box-shadow:
-                0px 2px 6px 2px rgba(0, 0, 0, 0.15),
-                0px 1px 2px 0px rgba(0, 0, 0, 0.3);
-            &::after {
-                background: var(--primary-opacity-008, rgba(208, 188, 255, 0.08));
-            }
+            background: var(--states-hovered, rgba(255, 255, 255, 0.08));
         }
 
         @include activeFocus {
-            &::after {
-                background: var(--surface-dim-opacity-012, rgba(222, 216, 225, 0.12));
-            }
+            background: var(--states-focused, rgba(255, 255, 255, 0.12));
         }
 
         &[disabled],
         &.disabled {
-            background: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
-            color: #e1e4d961;
-            &::after {
-                background-color: transparent;
-            }
+            color: var(--surface-container-on-surface-container-disabled, #454a70);
+            background: var(--surface-container-surface-container-disabled, #191c38);
         }
     }
 
-    &--tonal {
-        background: var(--secondary-container, #374d2c);
-        color: var(--on-secondary-container, #d0ebbe);
+    &--outlined {
+        background: transparent;
+        color: var(--on-surface-on-surface, #d2d5ea);
+        border: 1px solid var(--on-surface-on-surface-light, #fff);
 
         @include hover {
-            box-shadow:
-                0px 1px 3px 1px rgba(0, 0, 0, 0.15),
-                0px 1px 2px 0px rgba(0, 0, 0, 0.3);
-
-            &::after {
-                background: var(--on-secondary-container-opacity-008, rgba(232, 222, 248, 0.08));
-            }
+            background: var(--states-hovered, rgba(255, 255, 255, 0.08));
         }
 
         @include activeFocus {
-            &::after {
-                background: var(--on-secondary-container-opacity-012, rgba(232, 222, 248, 0.12));
-            }
+            background: var(--states-focused, rgba(255, 255, 255, 0.12));
         }
 
         &[disabled],
         &.disabled {
-            background: var(--on-surface-opacity-012, rgba(230, 224, 233, 0.12));
-            color: #e1e4d961;
-            &::after {
-                background-color: transparent;
-            }
+            border-color: var(--on-surface-on-surface-dark, #969dd3);
+            color: var(--surface-container-on-surface-container-disabled, #454a70);
         }
+    }
+
+    &--text,
+    &--link {
+        color: var(--on-surface-on-surface-light, #fff);
+
+        @include hover {
+            color: var(--primary-primary-hover, #e9335d);
+        }
+
+        @include activeFocus {
+            color: var(--primary-primary-focus, #ee3b64);
+        }
+
+        &[disabled],
+        &.disabled {
+            color: var(--surface-container-on-surface-container-disabled, #454a70);
+        }
+    }
+
+    &--link {
+        padding: 0;
+    }
+
+    &.btn--link.btn--s {
+        font-size: rem(15);
     }
 }

@@ -10,17 +10,20 @@
 }
 
 html {
-    font-size: var(--font-default);
+    font:
+        400 var(--font-default) / 1.5 var(--ff-exo2),
+        sans-serif;
     @include default-scrollbar;
 }
 
 body {
-    background: var(--surface-dim, #11140f);
-    color: var(--on-surface, #e1e4d9);
+    background: var(--surface-container-surface-container-low, #080b1b);
+    color: var(--on-surface-on-surface, #d2d5ea);
     overflow-x: hidden;
 
     @include flex(column, stretch, flex-start);
     min-height: 100vh;
+    @include font-body;
 }
 
 main {
@@ -43,16 +46,95 @@ svg {
 
 :root {
     --offsets: 20px;
-    --width-container: 1440px;
-    --wrapper-margin: 32px;
+    --width-container: 1280px;
+    --wrapper-margin: 48px;
 
-    --font-default: 18px;
+    --font-default: 16px;
+    --ff-exo2: "Exo2", sans-serif;
 
     --star-color: #fbbf24;
-    --star-bg: transparent;
+    --star-bg: rgba(255, 255, 255, 0.35);
+
+    /* COLORS */
+    --surface-surface-bright: #1a1f42;
+    --surface-surface-dim: #0c0f28;
+    --surface-surface: #15193a;
+    --surface-container-surface-container: rgba(246 246 246 / 0.12);
+    --surface-container-surface-container-low: #080b1b;
+    --surface-container-surface-container-high: #343b87;
+    --surface-container-surface-container-disabled: #191c38;
+    --surface-container-on-surface-container-disabled: #454a70;
+    --surface-container-surface-container-transparent: rgba(14 14 52 / 0.7);
+    --outline-outline-light: #434a82;
+    --outline-outline-dark: #2d3365;
+    --on-surface-on-surface-dark: #969dd3;
+    --on-surface-on-surface: #d2d5ea;
+    --on-surface-on-surface-light: #ffffff;
+    --primary-primary-hover: #e9335d;
+    --primary-primary-focus: #ee3b64;
+    --primary-primary-disabled: #aa2e4b;
+    --primary-on-primary-disabled: #cc798c;
+    --primary-on-primary: #ffe9ee;
+    --secondary-secondary-hover: #309509;
+    --secondary-secondary-focus: #379f0f;
+    --secondary-secondary-disabled: #304f25;
+    --secondary-on-secondary-disabled: #4f7441;
+    --secondary-on-secondary: #ecffe5;
+    --tertiary-tertiary-hover: #15709f;
+    --tertiary-tertiary-focus: #1b79aa;
+    --tertiary-tertiary-disabled: #1b4d67;
+    --tertiary-on-tertiary: #dbf1fd;
+    --states-success: #55da5c;
+    --states-on-success: #0e1a12;
+    --states-error: #f9394c;
+    --states-on-error: #ffffff;
+    --states-warning: #e67e22;
+    --states-on-warning: #1a1410;
+    --states-hovered: rgba(255 255 255 / 0.08);
+    --states-focused: rgba(255 255 255 / 0.12);
+
+    /* GRADIENTS */
+    --surface-container-gold-stop-1-color: #fdce7e;
+    --surface-container-gold-stop-1-position: 0%;
+    --surface-container-gold-stop-2-color: #b06901;
+    --surface-container-gold-stop-2-position: 100%;
+    --outline-stroke-v2-stop-1-color: #1e244c;
+    --outline-stroke-v2-stop-1-position: 0%;
+    --outline-stroke-v2-stop-2-color: #4e589c;
+    --outline-stroke-v2-stop-2-position: 47.1%;
+    --outline-stroke-v2-stop-3-color: #1e244c;
+    --outline-stroke-v2-stop-3-position: 100%;
+    --outline-stroke-2-horizontal-stop-1-color: #1e244c;
+    --outline-stroke-2-horizontal-stop-1-position: 0%;
+    --outline-stroke-2-horizontal-stop-2-color: #4e589c;
+    --outline-stroke-2-horizontal-stop-2-position: 47.1%;
+    --outline-stroke-2-horizontal-stop-3-color: #1e244c;
+    --outline-stroke-2-horizontal-stop-3-position: 100%;
+    --outline-outline-stop-1-color: #424c93;
+    --outline-outline-stop-1-position: 0%;
+    --outline-outline-stop-2-color: #0f1332;
+    --outline-outline-stop-2-position: 100%;
+    --primary-primary-stop-1-color: #cf254c;
+    --primary-primary-stop-1-position: 0%;
+    --primary-primary-stop-2-color: #da2851;
+    --primary-primary-stop-2-position: 100%;
+    --secondary-secondary-stop-1-color: #297908;
+    --secondary-secondary-stop-1-position: 0%;
+    --secondary-secondary-stop-2-color: #268f01;
+    --secondary-secondary-stop-2-position: 100%;
+    --tertiary-tertiary-stop-1-color: #0c5d87;
+    --tertiary-tertiary-stop-1-position: 0%;
+    --tertiary-tertiary-stop-2-color: #156d9a;
+    --tertiary-tertiary-stop-2-position: 100%;
+
+    /* SHADOWS */
+    --elevation-1: 0 4px 16px 0 rgba(17 8 22 / 0.24);
+    --elevation2: 0 6px 20px 0 rgba(17 8 22 / 0.32);
+    --elevation-3: 0 9px 48px 0 rgba(35 16 46 / 0.28);
+    --elevation-4: 0 15px 65.9px 0 rgba(6 7 21 / 0.7);
+    --elevation-5: 0 15px 36px 0 rgba(6 7 21 / 0.43);
 
     @include media-max-sm {
         --offsets: 16px;
-        --wrapper-margin: 28px;
     }
 }

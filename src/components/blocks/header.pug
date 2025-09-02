@@ -8,19 +8,29 @@ header.header.js-header
                 li(class=`item ${item.submenu ? 'parent js-menu__item' : ''}`) 
                     a(href= item.link)= item.title
                     if item.submenu 
-                        include /img/svg/test.svg
+                        +icon("arrow-down")
                         ul.submenu.js-menu__list
                             each el in item.submenu 
                                 li(class=`item ${el.submenu ? 'parent js-menu__item' : ''}`) 
                                     a(href= el.link)= el.title
                                     if el.submenu 
-                                        include /img/svg/test.svg
+                                        +icon("arrow-down")
                                         ul.submenu
                                             each submenuEl in el.submenu 
                                                 li.item
                                                     a(href= submenuEl.link)= submenuEl.title
+    .lang.js-lang(class=`${isFull ? 'lang--full': ''}`)
+        img(src="img/en.png" alt="")
+        span EN
+        +icon("lang-arrow")
+        ul.lang__list 
+            each el in lang 
+                li.lang__item(class=`${el.modificator ? el.modificator : ""}`)
+                    a.lang__link(href="#") 
+                        img(src=`img/${el.img}`, alt="")
+                        span= el.text
     .header__burger.js-burger
-        span 
+
 
 
 
