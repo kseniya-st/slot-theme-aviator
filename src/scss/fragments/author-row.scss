@@ -1,0 +1,64 @@
+@use "../settings" as *;
+
+.author-row {
+    @include flex(row, center, flex-start, 8px);
+    flex-wrap: wrap;
+    color: var(--on-surface-on-surface-dark, #969dd3);
+
+    img {
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__name {
+        color: var(--on-surface-on-surface, #d2d5ea);
+
+        span {
+            color: var(--on-surface-on-surface-dark, #969dd3);
+        }
+    }
+
+    &__time {
+        padding-left: 12px;
+        margin-left: 4px;
+        border-left: 1px solid #32386a;
+    }
+
+    &__rating {
+        @include rateStars(24px);
+        @include font-title;
+        color: var(--on-surface-on-surface, #d2d5ea);
+        margin-left: auto;
+    }
+
+    @include media-max-mlg {
+        &__time {
+            width: 100%;
+            padding-left: 0;
+            margin-left: 0;
+            padding-top: 8px;
+            border-left: 0;
+            border-top: 1px solid #32386a;
+        }
+
+        &__rating {
+            margin-left: 0;
+        }
+    }
+
+    @include media-max-sm {
+        row-gap: 4px;
+
+        &__time {
+            margin-top: 4px;
+        }
+
+        &__rating {
+            margin-top: 4px;
+            @include font-title-s;
+        }
+    }
+}
