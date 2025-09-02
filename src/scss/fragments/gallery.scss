@@ -1,0 +1,108 @@
+@use "../settings" as *;
+
+.gallery {
+    margin-top: 16px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: stretch;
+    gap: 16px;
+
+    @include media-max-sm {
+        grid-template-columns: 1fr;
+    }
+
+    img,
+    video {
+        border-radius: 7px;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+        pointer-events: none;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    &__item {
+        max-width: 100%;
+        @include flex(row, center, center);
+
+        &--video {
+            .gallery__item-link {
+                &::after {
+                    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><rect x="1" y="1" width="50" height="42" rx="7" stroke="%23969DD3" stroke-width="2"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" fill="%23969DD3"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" stroke="%23969DD3"/></svg>');
+                    width: 52px;
+                    height: 44px;
+                    display: block;
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &::before {
+                    content: "";
+                    z-index: 0;
+                    position: absolute;
+                    inset: 0;
+                    background: rgba(14, 17, 43, 0.7);
+                }
+            }
+        }
+
+        &-text {
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 8px;
+            @include flex(row, center, center);
+            font-weight: 600;
+            color: var(--on-surface-on-surface-light, #fff);
+        }
+
+        &-link {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            display: flex;
+
+            border-radius: 8px;
+            overflow: hidden;
+
+            border-radius: 8px;
+            border: 1px solid transparent;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image:
+                -webkit-gradient(
+                    linear,
+                    left top,
+                    left bottom,
+                    from(rgba(14, 17, 43, 0.7)),
+                    to(rgba(14, 17, 43, 0.7))
+                ),
+                linear-gradient(180deg, #424c93 0%, #0f1332 100%);
+            background-image:
+                linear-gradient(rgba(14, 17, 43, 0.7), rgba(14, 17, 43, 0.7)),
+                linear-gradient(180deg, #424c93 0%, #0f1332 100%);
+        }
+
+        @include hover {
+            &.gallery__item--video .gallery__item-link::after {
+                content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><rect x="1" y="1" width="50" height="42" rx="7" fill="%23fff" fill-opacity=".08" stroke="%23969DD3" stroke-width="2"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" fill="%23969DD3"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" stroke="%23969DD3"/></svg>');
+            }
+        }
+        @include activeFocus {
+            &.gallery__item--video .gallery__item-link::after {
+                content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><rect x="1" y="1" width="50" height="42" rx="7" fill="%23fff" fill-opacity=".12" stroke="%23969DD3" stroke-width="2"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" fill="%23969DD3"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" stroke="%23969DD3"/></svg>');
+            }
+        }
+    }
+}

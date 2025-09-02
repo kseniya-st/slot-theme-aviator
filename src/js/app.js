@@ -6,3 +6,4 @@ import { initScrollContainer } from "./fragments/scrollContainer";
 import { initForm } from "./fragments/form";
 import { initCopyBtn } from "./fragments/copyBtn";
 import { initButton } from "./fragments/button";
+import { imgGallery } from "./fragments/imgGallery";

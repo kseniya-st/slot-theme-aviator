@@ -35,11 +35,11 @@ $font-size-default: 16;
     font-size: rem(20);
     line-height: rem(28);
     font-weight: 600;
-}
 
-@mixin font-title-s() {
-    font-size: rem(18);
-    line-height: rem(24);
+    @include media-max-sm {
+        font-size: rem(18);
+        line-height: rem(24);
+    }
 }
 
 @mixin font-label() {

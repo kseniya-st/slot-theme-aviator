@@ -1,0 +1,20 @@
+{
+    "slotCards": [
+        {
+            "img": "slot1.png",
+            "name": "Miami Jackpots"
+        },
+        {
+            "img": "slot2.png",
+            "name": "Miami Jackpots"
+        },
+        {
+            "img": "slot3.png",
+            "name": "Miami Jackpots"
+        },
+        {
+            "img": "slot4.png",
+            "name": "Miami Jackpots"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+//- @defaultData = slotCards[0]
+//- @mixin
+include /components/fragments/button.pug
+include /mixins/icons.pug
+mixin slotCard(item)
+    li.slot-card
+        img(src=`img/${item.img}` alt="")
+        .slot-card__wrap 
+            .slot-card__btns
+                button.btn.btn--filled.btn--primary.js-modal__btn(data-modal-text="Play for real money") 
+                    | Play 
+                button.btn.btn--text.btn--s.js-modal__open(data-modal-title="Aviator" data-modal-url="https://demo.spribe.io/launch/aviator?currency=INR&lang=EN") 
+                    | Play demo 
+        p.slot-card__name= item.name
+

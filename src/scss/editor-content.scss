@@ -7,20 +7,16 @@ h4,
 h5,
 h6 {
     color: var(--on-surface-on-surface-light, #fff);
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    margin-top: 20px;
+    margin-top: 24px;
     &:first-child {
         margin-top: 0;
-    }
-
-    @include media-max-sm {
-        margin-top: 16px;
     }
 }
 
@@ -40,7 +36,7 @@ ol:not([class]) {
 }
 
 p:not([class]) {
-    margin-top: 16px;
+    margin-top: 24px;
 
     &:first-child {
         margin-top: 0;
@@ -66,7 +62,7 @@ ul:not([class]),
 ul.wp-block-list,
 ol:not([class]),
 ol.wp-block-list {
-    margin-top: 16px;
+    margin-top: 24px;
     @include flex(column, flex-start, flex-start, 8px);
 
     &:first-child {

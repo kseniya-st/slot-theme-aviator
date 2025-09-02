@@ -49,7 +49,7 @@
 
     &--primary {
         color: var(--primary-on-primary, #ffe9ee);
-        background: var(--primary-primary, linear-gradient(180deg, #cf254c 0%, #da2851 100%));
+        background: #d5274f;
 
         @include hover {
             background: var(--primary-primary-hover, #e9335d);

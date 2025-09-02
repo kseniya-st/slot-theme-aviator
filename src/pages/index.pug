@@ -3,6 +3,7 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width")
     title main page
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css")
     link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
     link(rel="stylesheet",  href=cssPath)
     body
@@ -20,6 +21,19 @@ html(lang="en")
                 section.wrapper
                     h2 About the slot
                     include /components/fragments/author-row.pug
+                    p Aviator is one of the most iconic and widely played pokies on the market today, and once you try it, you’ll quickly see why. The game offers a perfect blend of modern design and high-energy excitement that appeals to both new and experienced players. With its slick, immersive graphics, intuitive interface, and a unique take on crash-style mechanics, Aviator provides nonstop action and thrill.
+                    p Players love the fast-paced gameplay and the adrenaline rush that comes with watching the multiplier climb — and deciding exactly when to cash out. The risk-reward balance is what keeps users coming back for more, and it’s no surprise that Aviator has become a go-to choice for those seeking big wins and real-time fun.
+                    p Developed by industry leader Microgaming, Aviator reflects the studio’s commitment to quality, innovation, and user engagement. It's optimized for both desktop and mobile devices, ensuring seamless gameplay anywhere, anytime. The game is available at countless reputable online casinos, where you can try it for free in demo mode or place real bets for the chance to win serious cash.
+                    h3 Screenshots and video
+                    +gallery(gallery)
+
+                section.wrapper     
+                    h2 Most Popular Free Slots
+                    ul.grid-block 
+                        each item in slotCards
+                            +slotCard(item)
+
+                
                 section.wrapper.sidebar 
 
 
@@ -36,5 +50,6 @@ html(lang="en")
         include ../components/fragments/mob-btn.pug
         +mobBtn(mobBtn)
 
+        script(src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js")
         script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
         script(src=jsPath, type=jsType ? 'module' : undefined)
