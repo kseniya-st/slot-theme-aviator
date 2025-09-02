@@ -68,7 +68,7 @@
 
     &--secondary {
         color: var(--secondary-on-secondary, #ecffe5);
-        background: var(--secondary-secondary, linear-gradient(180deg, #297908 0%, #268f01 100%));
+        background: #278403;
 
         @include hover {
             background: var(--secondary-secondary-hover, #309509);
@@ -108,9 +108,10 @@
         background: transparent;
 
         &::after {
+            content: "";
             position: absolute;
             inset: 0;
-            z-index: 0;
+            z-index: -1;
             pointer-events: none;
             background: var(--surface-container-surface-container-high, #343b87);
         }
