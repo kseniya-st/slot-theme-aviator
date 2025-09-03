@@ -176,4 +176,10 @@
     &.btn--link.btn--s {
         font-size: rem(15);
     }
+
+    @include media-max-sm {
+        &--l {
+            padding: 12px 24px;
+        }
+    }
 }

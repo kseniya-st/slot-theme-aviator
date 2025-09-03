@@ -4,6 +4,11 @@
     @include flex(row, center, flex-start, 8px);
     flex-wrap: wrap;
     color: var(--on-surface-on-surface-dark, #969dd3);
+    margin-top: 16px;
+
+    &:first-child {
+        margin-top: 0;
+    }
 
     img {
         width: 24px;
@@ -34,7 +39,7 @@
     }
 
     &__rating {
-        @include rateStars(24px);
+        @include rateStars(24px, 18px);
     }
 
     @include media-max-mlg {

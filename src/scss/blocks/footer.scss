@@ -32,6 +32,7 @@
 
     &__nav {
         width: 100%;
+        flex: 1;
 
         &-list {
             width: 100%;
@@ -66,13 +67,15 @@
         flex-wrap: wrap;
 
         li {
-            max-width: 100%;
+            max-width: 32px;
+            max-height: 23px;
+            @include flex(row, center, center);
         }
 
         img,
         svg {
-            max-width: 32px;
-            max-height: 23px;
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 
@@ -85,7 +88,7 @@
 
         img,
         svg {
-            @include maxSize(200px, 50px);
+            @include maxSize(100%, 100px);
             object-fit: contain;
         }
     }
@@ -126,6 +129,7 @@
     @include media-max-sm {
         gap: 20px;
         padding-block: 24px;
+        margin-top: 24px;
 
         &__row {
             padding-bottom: 20px;
@@ -144,7 +148,30 @@
         }
 
         &__copyright {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 16px;
             @include font-body-small;
+        }
+
+        &__flags {
+            gap: 8px;
+
+            li {
+                max-width: 24px;
+                max-height: 17px;
+            }
+        }
+
+        &__info {
+            @include font-body-small;
+        }
+
+        &__logo {
+            img,
+            svg {
+                max-height: 50px;
+            }
         }
     }
 }

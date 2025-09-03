@@ -50,10 +50,22 @@
 }
 
 .sidebar-grid {
-    @include media-min-mlg {
-        width: 100%;
-        max-width: calc(var(--width-container));
+    width: 100%;
+    max-width: calc(var(--width-container));
+    background: var(--surface-surface-dim, #0c0f28);
+    border-radius: 0 0 8px 8px;
 
+    padding-block: 16px;
+    padding-inline: var(--offsets, 20px);
+
+    & > * {
+        max-width: 100%;
+        min-width: 0;
+        margin-inline: 0;
+        padding-inline: 0;
+    }
+
+    @include media-min-mlg {
         display: grid;
         grid-template-columns: 1fr 270px;
         column-gap: 56px;
@@ -61,10 +73,9 @@
         margin: var(--wrapper-margin) auto 0;
         margin-top: 0;
 
-        border-radius: 8px;
-        background: var(--surface-surface-dim, #0c0f28);
-        padding-block: 16px;
-        padding-inline: var(--offsets, 20px);
+        & > * {
+            grid-column: 1/2;
+        }
 
         .wrapper:first-of-type {
             margin-top: 0;
@@ -73,31 +84,71 @@
             }
         }
 
-        & > * {
-            grid-column: 1/2;
-            max-width: 100%;
-            min-width: 0;
-            margin-inline: 0;
-            padding-inline: 0;
-        }
-
         .sidebar {
             align-self: flex-start;
             grid-column: 2/3;
             grid-row: 1/100;
             position: sticky;
-            top: 0;
+            top: 20px;
+            bottom: 20px;
             right: 0;
             width: 270px;
             padding-inline: 0;
-            max-height: 100vh;
+            max-height: calc(100vh - 40px);
             overflow-y: auto;
             @include thin-v-scrollbar;
         }
+    }
+
+    @include mediaMax(1320px) {
+        max-width: calc(100% - var(--offsets, 20px) * 2);
+        margin-inline: var(--offsets, 20px);
+    }
+
+    @include media-max-sm {
+        padding: 16px;
     }
 }
 
 .sidebar {
     width: 100%;
-    @include flex(column, stretch, flex-start, 16px);
+    @include flex(column, stretch, flex-start, 24px);
+
+    @include media-max-mlg {
+        gap: 48px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        section {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -24px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(90deg, #1e244c 0%, #4e589c 47.12%, #1e244c 100%);
+            }
+
+            &:first-child::before {
+                display: none;
+            }
+        }
+    }
+
+    @include media-max-sm {
+        h2,
+        h3 {
+            @include font-h2;
+        }
+    }
+}
+
+.section-hero + .wrapper {
+    @include media-max-sm {
+        margin-top: 0;
+    }
 }

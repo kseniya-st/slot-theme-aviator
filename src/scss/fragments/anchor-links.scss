@@ -2,6 +2,12 @@
 
 .anchor-links {
     background: var(--surface-surface-dim, #0c0f28);
+    margin-top: 16px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
     &__list {
         overflow-x: auto;
         overflow-y: hidden;

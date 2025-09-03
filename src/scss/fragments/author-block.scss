@@ -1,9 +1,14 @@
 @use "../settings" as *;
 
 .author-block {
+    margin-top: 16px;
     padding: 16px;
     border-radius: 8px;
     background: var(--surface-surface, #15193a);
+
+    &:first-child {
+        margin-top: 0;
+    }
 
     @include flex(column, flex-start, flex-start, 16px);
 
@@ -32,7 +37,7 @@
         color: var(--on-surface-on-surface, #d2d5ea);
         text-align: center;
         @include font-label;
-        @include rateStars(20px);
+        @include rateStars(19px);
     }
 
     @include media-max-sm {

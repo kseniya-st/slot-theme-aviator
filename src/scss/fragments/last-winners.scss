@@ -13,6 +13,7 @@
     &__title {
         width: 100%;
         padding-bottom: 16px;
+        margin-bottom: 0;
         text-align: left;
         position: relative;
         color: var(--on-surface-on-surface-light, #fff);
@@ -42,6 +43,8 @@
         grid-auto-flow: dense;
 
         img {
+            height: 46px;
+            object-fit: cover;
             width: 100%;
             grid-row: span 2;
             border-radius: 4px;
@@ -67,6 +70,12 @@
             grid-row: span 2;
             color: var(--on-surface-on-surface-light, #fff);
             @include font-label;
+        }
+    }
+
+    @include media-max-sm {
+        &__item {
+            grid-template-columns: 70px 1fr auto;
         }
     }
 }

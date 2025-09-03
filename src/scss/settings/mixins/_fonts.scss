@@ -64,6 +64,10 @@ $font-size-default: 16;
 }
 
 @mixin font-body-small() {
-    font-size: rem(12);
+    font-size: rem(14);
     line-height: rem(22);
+
+    @include media-max-sm {
+        font-size: rem(12);
+    }
 }

@@ -19,7 +19,7 @@
     &__content {
         position: relative;
         margin: auto var(--offsets, 20px);
-        padding: 16px 16px 0;
+        padding: 12px 16px 0;
         width: 100%;
         max-width: calc(var(--width-container));
         max-height: calc(100vh - var(--offsets, 20px));
@@ -51,7 +51,8 @@
         }
 
         .btn {
-            width: 100%;
+            margin-inline: auto;
+
             margin-top: -4px;
         }
 
@@ -62,6 +63,10 @@
             max-width: 100%;
             margin: 0;
             border-radius: 0;
+
+            .btn {
+                width: 100%;
+            }
         }
     }
 
@@ -109,12 +114,14 @@
     }
 
     &__title {
+        align-self: center;
         color: var(--on-surface-on-surface-light, #fff);
         margin-right: auto;
         @include font-title;
     }
 
     &__close {
+        align-self: center;
         position: relative;
         background: transparent;
         border: 0;

@@ -68,6 +68,8 @@
             display: none;
         }
 
+        @include font-label;
+
         @include hover {
             .section-faq__item-arrow {
                 background: var(--states-hovered, rgba(255, 255, 255, 0.08));
@@ -82,6 +84,7 @@
     }
 
     .author-block {
+        margin: 0;
         flex: 0.4324;
     }
 
@@ -102,6 +105,10 @@
         summary {
             padding: 8px 16px;
             min-height: 56px;
+        }
+
+        &__list {
+            gap: 8px;
         }
     }
 }

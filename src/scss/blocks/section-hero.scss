@@ -15,6 +15,7 @@
     }
 
     &__demo {
+        width: 100%;
         @include flex(column, stretch, flex-start);
         border-radius: 8px;
         overflow: hidden;
@@ -55,7 +56,11 @@
 
             img,
             svg {
-                max-width: 70px;
+                border-radius: 8px;
+                min-width: 70px;
+                width: 70px;
+                height: 55px;
+                object-fit: cover;
             }
         }
 
@@ -67,6 +72,12 @@
             .btn {
                 flex: 1;
             }
+        }
+
+        & > img {
+            max-height: 506px;
+            object-fit: cover;
+            object-position: top;
         }
     }
 
@@ -90,6 +101,9 @@
         gap: 16px;
 
         &__demo {
+            & > img {
+                height: 172px;
+            }
             &-row {
                 padding: 0;
                 gap: 0;
@@ -105,6 +119,13 @@
                 width: 100%;
                 max-width: 100%;
                 padding: 4px 8px 8px;
+                gap: 8px;
+
+                img,
+                svg {
+                    width: 70px;
+                    height: 48px;
+                }
             }
         }
     }
