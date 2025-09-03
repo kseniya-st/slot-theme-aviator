@@ -43,9 +43,9 @@
     }
 
     &__stars {
-        @include rateStars(20px);
         color: var(--on-surface-on-surface, #d2d5ea);
         font-weight: 600;
+        @include rateStars(20px);
     }
 
     &__bonus {
