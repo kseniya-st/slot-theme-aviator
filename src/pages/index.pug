@@ -12,32 +12,34 @@ html(lang="en")
 
         main
             include /components/blocks/section-hero.pug
-            
+
             section.wrapper.no-divider
                 include /components/fragments/anchor-links.pug
                 include /components/fragments/logos.pug
 
             .sidebar-grid
                 .wrapper.sidebar 
-                        section
-                            include /components/fragments/info-table.pug 
-                        section 
-                            h2 Top 3 Indian Casinos to Play Bustabit
-                            ul.grid-block.grid-block--1
-                                each card in casinoCards 
-                                    +casinoCard(card)
-                        include /components/fragments/last-winners.pug
-                            
-                section.wrapper
+                    section
+                        include /components/fragments/info-table.pug 
+                    section 
+                        h2 Top 3 Indian Casinos to Play Bustabit
+                        ul.grid-block.grid-block--1
+                            each card in casinoCards 
+                                +casinoCard(card)
+                    include /components/fragments/last-winners.pug
+
+                section.wrapper(id="about")
                     h2 About the slot
                     include /components/fragments/author-row.pug
-                    p Aviator is one of the most iconic and widely played pokies on the market today, and once you try it, you’ll quickly see why. The game offers a perfect blend of modern design and high-energy excitement that appeals to both new and experienced players. With its slick, immersive graphics, intuitive interface, and a unique take on crash-style mechanics, Aviator provides nonstop action and thrill.
+                    p 
+                        a(href="#") Aviator 
+                        | is one of the most iconic and widely played pokies on the market today, and once you try it, you’ll quickly see why. The game offers a perfect blend of modern design and high-energy excitement that appeals to both new and experienced players. With its slick, immersive graphics, intuitive interface, and a unique take on crash-style mechanics, Aviator provides nonstop action and thrill.
                     p Players love the fast-paced gameplay and the adrenaline rush that comes with watching the multiplier climb — and deciding exactly when to cash out. The risk-reward balance is what keeps users coming back for more, and it’s no surprise that Aviator has become a go-to choice for those seeking big wins and real-time fun.
                     p Developed by industry leader Microgaming, Aviator reflects the studio’s commitment to quality, innovation, and user engagement. It's optimized for both desktop and mobile devices, ensuring seamless gameplay anywhere, anytime. The game is available at countless reputable online casinos, where you can try it for free in demo mode or place real bets for the chance to win serious cash.
                     h3 Screenshots and video
                     +gallery(gallery)
 
-                section.wrapper     
+                section.wrapper(id="slots")     
                     h2 Most Popular Free Slots
                     ul.grid-block 
                         each item in slotCards
@@ -51,7 +53,7 @@ html(lang="en")
                     h2 Pixies of the Forest Slot Game Bonuses
                     +table(table1, true)
 
-                section.wrapper 
+                section.wrapper(id="proscons") 
                     h2 Pros and Cons
                     p 40 Super Hot is a slot offering 40 different winning opportunites. While the winning spins may happen not that often, when they do, you’ll almost certainly win a large reward.
                     +prosCons(prosCons)
@@ -63,7 +65,7 @@ html(lang="en")
                     p Fruit Cocktail payments and returns
                     p This slot machine offers a 95% return rate to the player, slightly lower than the sector average. Fruit cocktail icon provides reward more substantial, reaching up to 5000 credits, followed by the wild card with until 2000. 
                     p Various fruits such as watermelon, pear, apple and lemon award minor prizes in descending order. It is important to note that, although these values are shown in the free version, they only have economic relevance when betting with real funds, since in test mode credits have no monetary value.
-                
+
                 section.wrapper 
                     h2 Betting Function
                     p After making profits, you can take them with the “Take ” button, or bet them in a special game by pressing the “Risk ” button.
@@ -71,7 +73,7 @@ html(lang="en")
                     p Fruit Cocktail payments and returns
                     p This slot machine offers a 95% return rate to the player, slightly lower than the sector average. Fruit cocktail icon provides reward more substantial, reaching up to 5000 credits, followed by the wild card with until 2000. 
                     p Various fruits such as watermelon, pear, apple and lemon award minor prizes in descending order. It is important to note that, although these values are shown in the free version, they only have economic relevance when betting with real funds, since in test mode credits have no monetary value.
-                    img(src="img/content-img.png", alt="")
+                    img(src="img/content-img.png" alt="")
 
                 section.wrapper 
                     h2 Online Gambling Laws & Regulations in Australia
@@ -96,20 +98,11 @@ html(lang="en")
                         li When betting or not the free spins you get, given the risk that this entails, to the long it is better not to.
                         li Regarding the improved bet, since it only increases the RTP by 0.5%, it is not worth it.
 
-                section.wrapper 
+                section.wrapper(id="howto") 
                     h2 How to
                     +howTo(howTo)
 
                 include /components/blocks/section-faq.pug 
-
-                
-
-
-
-            section.wrapper
-                h2 Today IPL Match Prediction
-                include ../components/fragments/button.pug
-                +button('btn--outlined', 'Test')
 
         include ../components/blocks/footer.pug
 

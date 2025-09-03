@@ -24,12 +24,11 @@ p:not([class]),
 ul:not([class]),
 ol:not([class]) {
     a:not([class]) {
-        color: var(--text-secondary, #6b6b6b);
         text-decoration: underline;
         @include transition(color);
 
         @include hoverActiveFocus {
-            color: var(--link-color-hover, #3b8ffe);
+            color: var(--primary-primary-hover, #e9335d);
             text-decoration: none;
         }
     }
