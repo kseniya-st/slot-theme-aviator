@@ -76,6 +76,20 @@
         }
     }
 
+    &__logo {
+        display: flex;
+
+        &:is(a) {
+            @include hoverOpacity;
+        }
+
+        img,
+        svg {
+            @include maxSize(200px, 50px);
+            object-fit: contain;
+        }
+    }
+
     &__copyright {
         @include flex(row, center, flex-start, 10px);
         color: var(--on-surface-on-surface-light, #fff);

@@ -46,7 +46,7 @@
             background: var(--surface-surface-bright, #1a1f42);
             overflow-y: auto;
             @include absolute(100%, 0);
-            @include size(100%, calc(100svh - var(--header-height)));
+            @include size(100%, calc(100svh - var(--header-height) + 2px));
             @include thin-v-scrollbar;
         }
     }

@@ -14,11 +14,21 @@
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
 
-    &.grid-block--1 {
+    &.grid-block--sidebar {
         grid-template-columns: 1fr;
+    }
+
+    @include media-max-mlg {
+        &.grid-block--sidebar {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
     }
 
     @include media-max-sm {
         grid-template-columns: 1fr;
+
+        &.grid-block--sidebar {
+            grid-template-columns: 1fr;
+        }
     }
 }

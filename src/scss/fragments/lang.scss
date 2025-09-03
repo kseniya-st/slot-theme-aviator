@@ -76,6 +76,7 @@
 
         overflow-y: auto;
         overflow-x: hidden;
+        @include thin-v-scrollbar;
 
         border-radius: 0 0 8px 8px;
         background: var(--surface-surface-dim, #0c0f28);

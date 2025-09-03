@@ -67,6 +67,7 @@
     }
 
     &__name {
+        margin-top: auto;
         position: relative;
         z-index: 2;
         @include flex(row, center, center);

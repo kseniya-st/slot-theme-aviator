@@ -246,14 +246,7 @@
     @include mediaMax($burger-max) {
         padding: 8px 16px;
         & > .item.parent {
-            & > svg {
-                transform: rotate(-90deg);
-            }
-
             &.active {
-                & > svg {
-                    transform: rotate(-90deg);
-                }
                 padding-bottom: 0;
                 &::after {
                     display: none;
@@ -283,6 +276,7 @@
 
             svg {
                 margin-left: auto;
+                transform: rotate(-90deg);
             }
 
             &.parent.active {

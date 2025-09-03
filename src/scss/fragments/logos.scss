@@ -11,6 +11,10 @@
     &__item {
         @include flex(row, center, center);
         min-height: 40px;
+
+        img {
+            max-height: 50px;
+        }
     }
 
     @include media-max-sm {

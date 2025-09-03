@@ -64,6 +64,7 @@
             padding: 8px;
             @include flex(row, center, center);
             font-weight: 600;
+            text-align: center;
             color: var(--on-surface-on-surface-light, #fff);
         }
 
