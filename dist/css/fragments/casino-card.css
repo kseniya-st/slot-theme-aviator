@@ -1,0 +1,165 @@
+@charset "UTF-8";
+.casino-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--surface-surface-bright, #1a1f42);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.casino-card:first-child {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3clinearGradient id='grad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FDCE7E'/%3e%3cstop offset='100%25' stop-color='%23B06901'/%3e%3c/linearGradient%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='url(%23grad)' stroke-width='3' stroke-dasharray='20%2c12' stroke-linecap='round'/%3e%3c/svg%3e");
+}
+.casino-card__img {
+  width: 100%;
+  height: 90px;
+  margin-bottom: -8px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  background: linear-gradient(var(--surface-container-surface-container-low, #080b1b) 0 0) padding-box, linear-gradient(180deg, #424c93 0%, #0f1332 100%) border-box;
+}
+.casino-card__img img {
+  width: 100%;
+  object-fit: cover;
+}
+.casino-card__title {
+  color: var(--on-surface-on-surface-light, #fff);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+@media (max-width: 575.9px) {
+  .casino-card__title {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}
+.casino-card__rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: -12px;
+  color: var(--on-surface-on-surface-dark, #969dd3);
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@media (max-width: 575.9px) {
+  .casino-card__rating {
+    font-size: 0.75rem;
+  }
+}
+.casino-card__stars {
+  color: var(--on-surface-on-surface, #d2d5ea);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+@media (max-width: 575.9px) {
+  .casino-card__stars {
+    font-size: 0.9375rem;
+  }
+}
+.casino-card__stars {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  --percent: calc(var(--rating, 4.5) / 5 * 100%);
+}
+.casino-card__stars::before {
+  content: "★★★★★";
+  font-size: 18px;
+  line-height: 18px;
+  color: var(--star-bg);
+  position: relative;
+  display: block;
+  background: linear-gradient(to right, #fdce7e 0%, #b06901 var(--percent), var(--star-bg) var(--percent), var(--star-bg) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+@supports (-webkit-mask: url('data:image/svg+xml,<svg width="130" height="21" viewBox="0 0 130 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.139.984a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238A1 1 0 0 1 4.123 19.5l.56-5.522a1 1 0 0 0-.25-.767L.734 9.072a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474z" fill="currentColor"/></svg>') no-repeat center) or (mask: url('data:image/svg+xml,<svg width="130" height="21" viewBox="0 0 130 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.139.984a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238A1 1 0 0 1 4.123 19.5l.56-5.522a1 1 0 0 0-.25-.767L.734 9.072a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474z" fill="currentColor"/></svg>') no-repeat center) {
+  .casino-card__stars::before {
+    content: "";
+    width: 90px;
+    height: 18px;
+    display: block;
+    background: linear-gradient(to bottom, #fdce7e, #b06901) left/var(--percent) 100% no-repeat, var(--star-bg);
+    -webkit-mask: url('data:image/svg+xml,<svg width="130" height="21" viewBox="0 0 130 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.139.984a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238A1 1 0 0 1 4.123 19.5l.56-5.522a1 1 0 0 0-.25-.767L.734 9.072a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474z" fill="currentColor"/></svg>') no-repeat center;
+    -webkit-mask-size: contain;
+    mask: url('data:image/svg+xml,<svg width="130" height="21" viewBox="0 0 130 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.139.984a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238A1 1 0 0 1 4.123 19.5l.56-5.522a1 1 0 0 0-.25-.767L.734 9.072a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474zm26 0a1 1 0 0 1 1.728 0l2.794 4.796a1 1 0 0 0 .652.474l5.425 1.174a1 1 0 0 1 .534 1.644l-3.698 4.139a1 1 0 0 0-.25.767l.56 5.522a1 1 0 0 1-1.399 1.016l-5.079-2.238a1 1 0 0 0-.806 0l-5.08 2.238a1 1 0 0 1-1.397-1.016l.56-5.522a1 1 0 0 0-.25-.767l-3.699-4.139a1 1 0 0 1 .534-1.644l5.425-1.174a1 1 0 0 0 .652-.474z" fill="currentColor"/></svg>') no-repeat center;
+    mask-size: contain;
+    color: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+  }
+}
+.casino-card__bonus {
+  padding: 16px;
+  border-radius: 4px;
+  background: var(--surface-surface-dim, #0c0f28);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.casino-card__bonus-type {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.casino-card__bonus-type img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.casino-card__bonus-type span {
+  text-align: center;
+  background: var(--surface-container-gold, linear-gradient(180deg, #fdce7e 0%, #b06901 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.casino-card__bonus-text {
+  color: var(--on-surface-on-surface-light, #fff);
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+.casino-card .btn {
+  width: 100%;
+  margin-top: auto;
+}
+@media (max-width: 575.9px) {
+  .casino-card {
+    gap: 12px;
+  }
+  .casino-card__img {
+    margin-bottom: -4px;
+  }
+  .casino-card__rating {
+    margin-top: -9px;
+  }
+  .casino-card__bonus-text {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+}
+@media (max-width: 575.9px) and (max-width: 575.9px) {
+  .casino-card__bonus-text {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}

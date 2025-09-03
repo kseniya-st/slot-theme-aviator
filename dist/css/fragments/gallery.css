@@ -1,0 +1,89 @@
+.gallery {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+.gallery:first-child {
+  margin-top: 0;
+}
+@media (max-width: 575.9px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+.gallery img,
+.gallery video {
+  border-radius: 7px;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  max-height: 500px;
+  object-fit: cover;
+}
+.gallery__item {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.gallery__item--video .gallery__item-link::after {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><rect x="1" y="1" width="50" height="42" rx="7" stroke="%23969DD3" stroke-width="2"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" fill="%23969DD3"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" stroke="%23969DD3"/></svg>');
+  width: 52px;
+  height: 44px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.gallery__item--video .gallery__item-link::before {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 17, 43, 0.7);
+}
+.gallery__item-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-align: center;
+  color: var(--on-surface-on-surface-light, #fff);
+}
+.gallery__item-link {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: linear-gradient(rgba(14, 17, 43, 0.7) 0 0) padding-box, linear-gradient(180deg, #424c93 0%, #0f1332 100%) border-box;
+}
+@media (any-hover: hover) {
+  .gallery__item:hover.gallery__item--video .gallery__item-link::after {
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><rect x="1" y="1" width="50" height="42" rx="7" fill="%23fff" fill-opacity=".08" stroke="%23969DD3" stroke-width="2"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" fill="%23969DD3"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" stroke="%23969DD3"/></svg>');
+  }
+}
+.gallery__item:active.gallery__item--video .gallery__item-link::after {
+  content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><rect x="1" y="1" width="50" height="42" rx="7" fill="%23fff" fill-opacity=".12" stroke="%23969DD3" stroke-width="2"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" fill="%23969DD3"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" stroke="%23969DD3"/></svg>');
+}
+@media (any-hover: hover) {
+  .gallery__item:focus.gallery__item--video .gallery__item-link::after {
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="52" height="44" viewBox="0 0 52 44" fill="none"><rect x="1" y="1" width="50" height="42" rx="7" fill="%23fff" fill-opacity=".12" stroke="%23969DD3" stroke-width="2"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" fill="%23969DD3"/><path d="M21 17.148c0-.891 1.03-1.441 1.84-.983l8.57 4.852a1.115 1.115 0 0 1 0 1.966l-8.57 4.852c-.81.458-1.84-.092-1.84-.983z" stroke="%23969DD3"/></svg>');
+  }
+}
