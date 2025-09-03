@@ -80,16 +80,26 @@ ol.wp-block-list {
 
     li {
         counter-increment: ol-default;
-        padding-left: 26px;
+        padding-left: 32px;
 
         &::before {
+            content: counter(ol-default);
             position: absolute;
-            content: counter(ol-default) ". ";
-            width: 18px;
             left: 0;
-            text-align: center;
+            top: 0;
+            padding: 3px 7px 5px 2px;
+            width: 24px;
+            height: 24px;
 
-            color: var(--accent-base, #3b8ffe);
+            @include flex(row, center, center);
+            background: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 2.5h12.179a.5.5 0 0 1 .462.309l3.738 9a.5.5 0 0 1 0 .382l-3.738 9a.5.5 0 0 1-.462.309H5a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5Z" stroke="url(%23a)"/><path d="M2 5a1 1 0 0 1 1-1h11.938a1 1 0 0 1 .92.609l2.976 7a1 1 0 0 1 0 .782l-2.975 7a1 1 0 0 1-.92.609H3a1 1 0 0 1-1-1z" fill="url(%23b)"/><defs><linearGradient id="a" x1="13" y1="2" x2="13" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="%230C5D87"/><stop offset="1" stop-color="%23156D9A"/></linearGradient><linearGradient id="b" x1="10.5" y1="4" x2="10.5" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="%230C5D87"/><stop offset="1" stop-color="%23156D9A"/></linearGradient></defs></svg>');
+            background-position: center;
+            background-size: contain;
+
+            color: var(--on-surface-on-surface-light, #fff);
+            font-size: rem(14);
+            line-height: 1;
+            font-weight: 400;
         }
     }
 }
@@ -97,17 +107,16 @@ ol.wp-block-list {
 ul:not([class]),
 ul.wp-block-list {
     li {
-        padding-left: 19px;
+        padding-left: 26px;
 
         &::before {
             content: "";
             position: absolute;
-            top: 13px;
+            top: 0;
             left: 0;
-            width: 11px;
-            height: 11px;
-            transform: translateY(-50%);
-            background: url('data:image/svg+xml,<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><rect y="5.323" width="8" height="8" rx="2" transform="rotate(-45 0 5.323)" fill="%233B8FFE"/></svg>');
+            width: 18px;
+            height: 18px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.893 3.012a.5.5 0 0 1 .592.607l-.022.07-4.5 11a.5.5 0 0 1-.913.028l-.028-.074-1.435-4.78-4.29-1.906a.5.5 0 0 1 .025-.924l10.5-4zm-5.33 6.63 1.01 3.36 3.023-7.392zM4.812 7.536 7.89 8.904l4.105-4.105z" fill="url(%23a)"/><defs><linearGradient id="a" x1="8.75" y1="3" x2="8.75" y2="15" gradientUnits="userSpaceOnUse"><stop stop-color="%230C5D87"/><stop offset="1" stop-color="%23156D9A"/></linearGradient></defs></svg>');
         }
     }
 }

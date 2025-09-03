@@ -28,10 +28,13 @@
     }
 
     &__rating {
-        @include rateStars(24px);
-        @include font-title;
         color: var(--on-surface-on-surface, #d2d5ea);
         margin-left: auto;
+        @include font-title;
+    }
+
+    &__rating {
+        @include rateStars(24px);
     }
 
     @include media-max-mlg {

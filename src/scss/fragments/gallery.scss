@@ -77,21 +77,11 @@
             overflow: hidden;
 
             border-radius: 8px;
-            border: 1px solid transparent;
-            background-clip: padding-box, border-box;
-            background-origin: padding-box, border-box;
-            background-image:
-                -webkit-gradient(
-                    linear,
-                    left top,
-                    left bottom,
-                    from(rgba(14, 17, 43, 0.7)),
-                    to(rgba(14, 17, 43, 0.7))
-                ),
-                linear-gradient(180deg, #424c93 0%, #0f1332 100%);
-            background-image:
-                linear-gradient(rgba(14, 17, 43, 0.7), rgba(14, 17, 43, 0.7)),
-                linear-gradient(180deg, #424c93 0%, #0f1332 100%);
+            @include borderGradientWithBg(
+                2px,
+                rgba(14, 17, 43, 0.7),
+                linear-gradient(180deg, #424c93 0%, #0f1332 100%)
+            );
         }
 
         @include hover {

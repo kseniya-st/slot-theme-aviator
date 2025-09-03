@@ -1,60 +1,64 @@
 @use "../settings" as *;
 
 .section-faq {
-    display: grid;
-    grid-template-columns: 1fr 588px;
-    column-gap: 20px;
-    row-gap: 32px;
-
-    @include media-max-lg {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @include media-max-mlg {
-        grid-template-columns: 1fr;
-    }
-
-    @include media-max-sm {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 28px;
+    &__wrap {
+        @include flex(row, flex-start, flex-start, 16px);
     }
 
     &__list {
-        @include flex(column, stretch, flex-start, 8px);
+        @include flex(column, stretch, flex-start, 16px);
         flex: 1;
     }
 
     &__item {
         @include relative();
-        &:not(:first-child) {
-            border-top: 1px solid #43483e;
-        }
+        border-radius: 8px;
+        border: 1px solid var(--outline-outline-light, #434a82);
+        overflow: hidden;
 
         p {
-            margin-block: 8px;
+            margin: 16px;
         }
 
         &[open] {
             summary {
-                svg {
-                    transform: translate(0, -50%) rotate(-180deg);
+                background: var(--surface-surface, #15193a);
+                .section-faq__item-arrow::after {
+                    transform: rotate(-180deg);
                 }
+            }
+        }
+
+        &-arrow {
+            @include flex(row, center, center);
+            width: 36px;
+            height: 36px;
+            padding: 8px;
+            border-radius: var(--border-radius-radius-medium, 12px);
+            border: 1px solid var(--on-surface-on-surface-dark, #969dd3);
+            @include transition(background);
+
+            &::after {
+                content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.667 7.419 15.1 5.833l-5.1 5.15-5.1-5.15-1.567 1.586L10 14.166z" fill="%23fff"/></svg>');
+                width: 20px;
+                height: 20px;
+                display: block;
+                transform-origin: center;
+                @include transition(transform);
             }
         }
     }
 
     summary {
         @include relative();
-        @include flex(row, center, space-between, 8px);
-        min-height: 64px;
+        @include flex(row, center, space-between, 16px);
+        min-height: 72px;
 
-        padding: 8px 0;
-        padding-right: 48px;
-
+        padding: 16px;
         cursor: pointer;
-
         list-style: none;
+
+        @include transition(background);
 
         &::marker {
             content: "";
@@ -64,51 +68,40 @@
             display: none;
         }
 
-        &::after {
-            content: "";
-            @include absolute(50%, $right: 4px);
-
-            transform: translate(0, -50%);
-            @include size(40px, 40px);
-
-            border-radius: 50%;
-            pointer-events: none;
-
-            @include transition(background);
-        }
-
         @include hover {
-            &::after {
-                background: var(--on-surface-variant-opacity-008, rgba(202, 196, 208, 0.08));
+            .section-faq__item-arrow {
+                background: var(--states-hovered, rgba(255, 255, 255, 0.08));
             }
         }
 
         @include active {
-            &::after {
-                background: var(--on-surface-variant-opacity-012, rgba(202, 196, 208, 0.12));
+            .section-faq__item-arrow {
+                background: var(--states-focused, rgba(255, 255, 255, 0.12));
             }
-        }
-
-        svg {
-            @include absolute(50%, $right: 0);
-            transform: translate(0, -50%);
-
-            @include minSize(48px, 48px);
-            @include size(48px, 48px);
-            @include transition(transform);
-        }
-
-        @include media-max-sm {
-            padding-block: 0;
-            min-height: 48px;
         }
     }
 
-    .join-form {
-        margin-top: 59px;
+    .author-block {
+        flex: 0.4324;
+    }
 
-        @include media-max-mlg {
-            margin-top: 0;
+    @include media-max-mlg {
+        &__wrap {
+            flex-direction: column;
+        }
+
+        &__list {
+            width: 100%;
+        }
+        .author-block {
+            width: 100%;
+        }
+    }
+
+    @include media-max-sm {
+        summary {
+            padding: 8px 16px;
+            min-height: 56px;
         }
     }
 }

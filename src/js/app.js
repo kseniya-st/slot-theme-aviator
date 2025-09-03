@@ -1,4 +1,3 @@
-import { initGoUp } from "./fragments/go-up";
 import { header } from "./blocks/header";
 import { initToc } from "./blocks/toc";
 import { initAccord } from "./fragments/accord";

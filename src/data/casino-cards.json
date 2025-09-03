@@ -1,0 +1,31 @@
+{
+    "casinoCards": [
+        {
+            "img":"parimatch.png",
+            "title":"Parimatch",
+            "bonus":"500% First Deposit Bonus",
+            "btn": {
+                "modificator":"btn--filled btn--primary",
+                "text":"Visit Casino"
+            }
+        },
+        {
+            "img":"betera2.png",
+            "title":"Betera",
+            "bonus":"500% First Deposit Bonus",
+            "btn": {
+                "modificator":"btn--filled btn--primary",
+                "text":"Visit Casino"
+            }
+        },
+        {
+            "img":"batery.png",
+            "title":"Batery",
+            "bonus":"500% First Deposit Bonus",
+            "btn": {
+                "modificator":"btn--filled btn--primary",
+                "text":"Visit Casino"
+            }
+        }
+    ]
+}

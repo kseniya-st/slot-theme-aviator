@@ -14,6 +14,10 @@
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
 
+    &.grid-block--1 {
+        grid-template-columns: 1fr;
+    }
+
     @include media-max-sm {
         grid-template-columns: 1fr;
     }

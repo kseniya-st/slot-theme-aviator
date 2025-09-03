@@ -1,0 +1,28 @@
+{
+    "lastWinners": [
+        {
+            "game": "Games Name",
+            "img": "last-winners-game-1.png",
+            "name": "User67862",
+            "sum": "$ 1873"
+        },
+        {
+            "game": "Games Name",
+            "img": "last-winners-game-2.png",
+            "name": "User67862",
+            "sum": "$ 1873"
+        },
+        {
+            "game": "Games Name",
+            "img": "last-winners-game-3.png",
+            "name": "User67862",
+            "sum": "$ 1873"
+        },
+        {
+            "game": "Games Name",
+            "img": "last-winners-game-1.png",
+            "name": "User67862",
+            "sum": "$ 1873"
+        }
+    ]
+}

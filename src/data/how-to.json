@@ -1,0 +1,26 @@
+{
+    "howTo": [
+        {
+            "title":"Open 1win com", 
+            "descr": "If you registered through a social network, select this 1win login option. Otherwise, enter your email/phone number and password.",
+            "img":"how-to-1.png"
+        },
+        {
+            "title":"Click on the “Login” button", 
+            "descr": "If you registered through a social network, select this 1win login option. Otherwise, enter your email/phone number and password.",
+            "img":"how-to-2.png",
+            "btns": [
+                {
+                    "modificator":"btn--primary btn--filled",
+                    "text":"Login"
+                }
+            ]
+        },
+        {
+            "title":"Registration", 
+            "descr": "If you registered through a social network, select this 1win login option. Otherwise, enter your email/phone number and password.",
+            "img":"how-to-3.png"
+        }
+      
+    ]
+}

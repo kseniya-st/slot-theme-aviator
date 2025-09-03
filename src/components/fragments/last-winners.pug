@@ -1,0 +1,11 @@
+include /layouts/base.pug
+section.last-winners
+    h2.last-winners__title Winning now
+    ul.last-winners__list 
+        each winner in lastWinners
+            li.last-winners__item
+                img(src=`img/${winner.img}`, alt=winner.game)
+                p.last-winners__item-game= winner.game
+                span.last-winners__item-name= winner.name 
+                span.last-winners__item-sum= winner.sum 
+

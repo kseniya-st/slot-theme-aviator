@@ -1,0 +1,87 @@
+@use "../settings" as *;
+
+.casino-card {
+    padding: 16px;
+    border-radius: 8px;
+
+    background: var(--surface-surface-bright, #1a1f42);
+
+    @include flex(column, stretch, flex-start, 16px);
+
+    &:first-child {
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3clinearGradient id='grad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3e%3cstop offset='0%25' stop-color='%23FDCE7E'/%3e%3cstop offset='100%25' stop-color='%23B06901'/%3e%3c/linearGradient%3e%3c/defs%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='url(%23grad)' stroke-width='3' stroke-dasharray='20%2c12' stroke-linecap='round'/%3e%3c/svg%3e");
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: -8px;
+
+        border-radius: 8px;
+        overflow: hidden;
+        @include borderGradientWithBg(
+            1px,
+            var(--surface-container-surface-container-low, #080b1b),
+            linear-gradient(180deg, #424c93 0%, #0f1332 100%)
+        );
+        img {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        color: var(--on-surface-on-surface-light, #fff);
+        @include font-title;
+    }
+
+    &__rating {
+        @include flex(row, center, flex-start, 8px);
+        flex-wrap: wrap;
+
+        margin-top: -12px;
+        color: var(--on-surface-on-surface-dark, #969dd3);
+        @include font-body-small;
+    }
+
+    &__stars {
+        @include rateStars(20px);
+        color: var(--on-surface-on-surface, #d2d5ea);
+        font-weight: 600;
+    }
+
+    &__bonus {
+        padding: 16px;
+        border-radius: 4px;
+        background: var(--surface-surface-dim, #0c0f28);
+
+        @include flex(column, center, center, 8px);
+
+        &-type {
+            @include flex(row, center, center, 12px);
+            img {
+                max-width: 50px;
+                max-height: 50px;
+            }
+
+            span {
+                background: var(
+                    --surface-container-gold,
+                    linear-gradient(180deg, #fdce7e 0%, #b06901 100%)
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        &-text {
+            color: var(--on-surface-on-surface-light, #fff);
+            text-align: center;
+            @include font-label;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: auto;
+    }
+}

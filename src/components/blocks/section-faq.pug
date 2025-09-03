@@ -1,11 +1,13 @@
 include /layouts/base.pug
 section.wrapper.section-faq
-    .section.faq__col
-        h2 FAQs
+    h2 FAQs
+    .section-faq__wrap
         .section-faq__list
             each item in faq 
                 details.section-faq__item 
                     summary= item.quest
-                        +icon("test2")
+                        span.section-faq__item-arrow
+                        //- +icon("test2")
                     p= item.answer
-        +prosCons(prosCons)
+        include /components/fragments/author-block.pug
+        

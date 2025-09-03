@@ -26,9 +26,9 @@
 
 @mixin borderGradientWithBg($size: 2px, $bg: #0f192a, $grad: linear-gradient(blue, red)) {
     border: $size solid transparent;
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
-    background-image: linear-gradient($bg, $bg), $grad;
+    background:
+        linear-gradient($bg 0 0) padding-box,
+        $grad border-box;
 }
 
 @mixin borderGradientNoBg($size: 2px, $radius: 8px, $bg: null) {
@@ -47,7 +47,9 @@
         background-size: 250% 100%;
         background-position: 100% 0%;
 
-        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
         mask-composite: exclude;
         pointer-events: none;
     }

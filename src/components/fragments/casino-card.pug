@@ -1,0 +1,16 @@
+//- @defaultData = casinoCards[0]
+//- @mixin
+mixin casinoCard(data)
+    div.casino-card
+        .casino-card__img
+            img(src=`img/${data.img}`, alt=data.title)
+        p.casino-card__title= data.title
+        .casino-card__rating
+            | Casino Rating
+            span.casino-card__stars(style="--rating: 4.5;") 4,5     
+        .casino-card__bonus 
+            .casino-card__bonus-type 
+                img(src="img/gift.png", alt="")
+                span Welcome-bonus
+            p.casino-card__bonus-text= data.bonus
+        +button(data.btn.modificator, data.btn.text)
