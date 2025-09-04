@@ -150,13 +150,15 @@
                 right: 0;
                 & > .item {
                     flex-direction: row-reverse;
-                    a,
-                    span {
+                    & > a,
+                    & > span {
                         flex-direction: row-reverse;
                     }
+                }
 
+                & > .item.parent {
                     & > svg {
-                        transform: rotate(180deg);
+                        transform: rotate(90deg);
                     }
                 }
 

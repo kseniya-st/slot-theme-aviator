@@ -1271,12 +1271,11 @@ svg {
   .header-menu .item_left > .submenu > .item {
     flex-direction: row-reverse;
   }
-  .header-menu .item_left > .submenu > .item a,
-  .header-menu .item_left > .submenu > .item span {
+  .header-menu .item_left > .submenu > .item > a, .header-menu .item_left > .submenu > .item > span {
     flex-direction: row-reverse;
   }
-  .header-menu .item_left > .submenu > .item > svg {
-    transform: rotate(180deg);
+  .header-menu .item_left > .submenu > .item.parent > svg {
+    transform: rotate(90deg);
   }
   .header-menu .item_left > .submenu .submenu {
     left: 0px;
