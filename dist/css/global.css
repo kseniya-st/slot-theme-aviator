@@ -162,33 +162,8 @@ h6 {
     align-self: flex-start;
     grid-column: 2/3;
     grid-row: 1/100;
-    position: sticky;
-    top: 20px;
-    bottom: 20px;
-    right: 0;
     width: 270px;
     padding-inline: 0;
-    max-height: calc(100vh - 40px);
-    overflow-y: auto;
-  }
-  @supports not selector(::-webkit-scrollbar) {
-    .sidebar-grid .sidebar {
-      scrollbar-width: thin;
-      scrollbar-color: var(--primary-opacity-012, rgba(208, 188, 255, 0.12)) transparent;
-    }
-  }
-  .sidebar-grid .sidebar::-webkit-scrollbar {
-    width: 4px;
-  }
-  .sidebar-grid .sidebar::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background: var(--primary-opacity-012, rgba(208, 188, 255, 0.12));
-    border-radius: 9px;
-    border: 4px solid transparent;
-  }
-  .sidebar-grid .sidebar::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 9px;
   }
 }
 @media (max-width: 1320px) {
