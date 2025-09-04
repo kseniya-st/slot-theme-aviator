@@ -46,55 +46,77 @@
                 },
                 {
                     "title": "How to Play 3",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 4",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 5",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 6",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 7",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 8",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 9",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 10",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 10",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 10",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 10",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 10",
-                    "link": "#"
-                },
-                {
-                    "title": "How to Play 11",
-                    "link": "#"
+                    "link": "#",
+                    "submenu": [
+                        {
+                            "title": "How to Play 4",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 5",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 6",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 7",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 8",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 9",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 10",
+                            "link": "#"
+                        },
+                        {
+                            "title": "How to Play 11",
+                            "link": "#"
+                        }
+                    ]
                 }
             ]
         },
@@ -102,23 +124,23 @@
             "title": "Bonuses",
             "link": "#"
         }
-    ], 
+    ],
     "lang": [
         {
-            "img":"argentina.png",
-            "text":""
+            "img": "argentina.png",
+            "text": ""
         },
         {
-            "img":"uganda.png",
-            "text":""
+            "img": "uganda.png",
+            "text": ""
         },
         {
-            "img":"togo.png",
-            "text":""
+            "img": "togo.png",
+            "text": ""
         },
         {
-            "img":"tanzania.png",
-            "text":""
+            "img": "tanzania.png",
+            "text": ""
         }
     ]
 }
