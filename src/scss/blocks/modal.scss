@@ -51,8 +51,8 @@
         }
 
         .btn {
+            min-width: 200px;
             margin-inline: auto;
-
             margin-top: -4px;
         }
 
@@ -66,6 +66,7 @@
 
             .btn {
                 width: 100%;
+                min-width: unset;
             }
         }
     }

@@ -1962,6 +1962,7 @@ svg {
   grid-column: 2/3;
 }
 .modal__content .btn {
+  min-width: 200px;
   margin-inline: auto;
   margin-top: -4px;
 }
@@ -1976,6 +1977,7 @@ svg {
   }
   .modal__content .btn {
     width: 100%;
+    min-width: unset;
   }
 }
 .modal__body {
